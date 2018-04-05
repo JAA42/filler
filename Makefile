@@ -23,8 +23,8 @@ $(NAME) :
 	gcc -o $(NAME) $(SRCS) $(LIB)
 
 push :
-	git add .
-	git commit -m "yo"
+	@git add .
+	@git commit -m "yo"
 	git push
 
 clean :
