@@ -15,11 +15,14 @@ void	ft_play(void)
 	close(fd);
 }
 
+
+
 int		main(void)
 {
 	t_info *infos;
 
 	infos = NULL;
+	//ft_init_infos(infos);
 	ft_play();
 	return (0);
 }
