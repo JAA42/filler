@@ -1,3 +1,4 @@
 Reprendre ma libft du printf car elle est normee et les header sont bons et les leaks aussi
 Celle-ci sert uniquement au developpement de FILLER car je ne l'ai pas a disposition
 Re rajouter
+ajouter memalloc set et le gnl aussi

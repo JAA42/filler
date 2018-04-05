@@ -17,6 +17,8 @@
 # include <unistd.h>
 # include "get_next_line.h"
 
+void	ft_puttab_fd(char **tab, int fd);
+void	*ft_memallocset(size_t size, char c);
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *str1, const void *str2, size_t n);
