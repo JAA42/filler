@@ -22,6 +22,11 @@ $(NAME) :
 	make -C libft all
 	gcc -o $(NAME) $(SRCS) $(LIB)
 
+push :
+	git add .
+	git commit -m "yo"
+	git push
+
 clean :
 	make -C libft clean
 

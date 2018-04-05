@@ -16,7 +16,7 @@
 # include <sys/stat.h>
 # include <sys/types.h>
 # include <fcntl.h>
-# define BUFF_SIZE 9999
+# define BUFF_SIZE 128
 
 int get_next_line(const int fd, char **line);
 
