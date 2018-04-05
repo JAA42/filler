@@ -14,12 +14,12 @@ NAME = login.player #modifier le login avec le sien
 
 LIB = libft/libft.a
 
-SRCS = player.c
+SRCS = player.c structure.c
 
 all : $(NAME)
 
 $(NAME) :
-	make -C libft all
+	@make -C libft all
 	gcc -o $(NAME) $(SRCS) $(LIB)
 
 push :
@@ -28,10 +28,10 @@ push :
 	git push
 
 clean :
-	make -C libft clean
+	@make -C libft clean
 
 fclean : clean
-	make -C libft fclean
-	rm -f $(NAME)
+	@make -C libft fclean
+	@rm -f $(NAME)
 
 re : fclean all

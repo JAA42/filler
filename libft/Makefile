@@ -24,21 +24,22 @@ SRC = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 	  ft_strnew.c ft_strnstr.c ft_strrchr.c ft_strsplit.c ft_strstr.c \
 	  ft_strsub.c ft_strtrim.c ft_tolower.c ft_toupper.c ft_find_next_sqrt.c \
 	  ft_long_itoa.c ft_long_long_itoa.c ft_intmax_t_itoa.c ft_uintmax_t_itoa.c\
-	  ft_size_t_itoa.c ft_strjoin_free.c ft_intmax_t_putnbr.c get_next_line.c\
+	  ft_size_t_itoa.c ft_strjoin_free.c ft_intmax_t_putnbr.c get_next_line.c \
+	  ft_memallocset.c ft_puttab_fd.c \
 
 OBJ = $(SRC:.c=.o)
 
 all : $(NAME)
 
 $(NAME) :
-	gcc -Wall -Wextra -Werror -c $(SRC)
-	ar rc $(NAME) $(OBJ)
+	@gcc -Wall -Wextra -Werror -c $(SRC)
+	@ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
 clean :
-	rm -f $(OBJ)
+	@rm -f $(OBJ)
 
 fclean : clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re : fclean all
