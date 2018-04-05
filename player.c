@@ -1,6 +1,6 @@
 #include "player.h"
 
-void	ft_read_first_info(void)
+void	ft_play(void)
 {
 	char *line;
 	int fd;//test
@@ -13,18 +13,13 @@ void	ft_read_first_info(void)
 		ft_putstr_fd("\n", fd);
 	}
 	close(fd);
-	
-	exit(0);
-}
-
-void	ft_play(void)
-{
-	ft_putstr("mise en place");
 }
 
 int		main(void)
 {
-	ft_read_first_info();
+	t_info *infos;
+
+	infos = NULL;
 	ft_play();
 	return (0);
 }

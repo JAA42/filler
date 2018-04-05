@@ -1,6 +1,6 @@
-seed = 1925
-X: timedout
-O: error on input
+seed = 8755
+O: timedout
+X: error on input
 resources/players/superjeannot.filler won
 Score:
-32AGAINST0
+0AGAINST9
