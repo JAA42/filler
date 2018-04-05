@@ -25,24 +25,13 @@ void		ft_play(t_info *info)
 	int		state = 0;
 
 	fd = open("send_by_vm.txt", O_RDWR | O_CREAT, O_APPEND | S_IRWXU);//test
-//			ft_putstr_fd("2", fd);
-	//ft_putnbr_fd(info->player, fd);
 	line = NULL;
 	while (get_next_line(0, &line))
 	{
-		//ft_putstr_fd("3", fd);
 		if (state == 0)
-		{
-		//	ft_putstr_fd("4", fd);
 			state = ft_init_players_map(line, info, fd);
-		//	ft_putstr_fd("5", fd);
-		}
 		else if (state == 1)
-		{
-		//	ft_putstr_fd("5", fd);
-		//	ft_putstr_fd(info->map[8], fd);
 			state = ft_update_map(line, info);
-		}
 		else if (state == 2)
 		{
 			ft_puttab_fd(info->map, fd);
@@ -54,15 +43,6 @@ void		ft_play(t_info *info)
 			//free;
 	}
 }
-	//ft_putstr_fd(line, fd);
-	//ft_putstr_fd("\n", fd);
-
-//	free(line);
-	//remettre tout ce qu'il faut a free et a 0 avant affichage des coordonees
-	//en mettant state a 1
-	//		if (state == 15)
-	//			ft_putstr(give_xy());
-//	state++;
 
 int			main(void)
 {

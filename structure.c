@@ -5,12 +5,9 @@ int		ft_init_players_map(char *line, t_info *info, int fd)
 	int i;
 
 	i = 0;
-//	ft_putstr_fd("popo", fd);
 	if (!(info->player))
 	{
-//		ft_putstr_fd("popo", fd);
 		info->player = (line[10] == 1) ? 'O' : 'X';
-//		ft_putstr_fd("pipi", fd);
 		return (0);
 	}
 	if (!info->ymap)
