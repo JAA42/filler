@@ -9,12 +9,12 @@
 #    Updated: 2018/03/07 14:22:48 by avallois         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-#tes axel#
-NAME = login.player #modifier le login avec le sien
+
+NAME = login.filler #modifier le login avec le sien
 
 LIB = libft/libft.a
 
-SRCS = player.c structure.c
+SRCS = filler.c manage_data_inputs.c
 
 all : $(NAME)
 
