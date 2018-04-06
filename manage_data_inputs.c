@@ -25,6 +25,7 @@ int			ft_update_map(char *line, t_info *info, int fd)
 
 	x = -1;
 	y = 0;
+	get_next_line(0, &line);
 	while (info->map[++y])
 	{
 		while (info->map[++x])
@@ -51,15 +52,15 @@ int			ft_init_players_map(char *line, t_info *info, int fd)
 	{
 		info->ymap = ft_atoi(line + 8);
 		info->xmap = ft_atoi(ft_strrchr(line, ' ') + 1);
-		return (0);
-	}
-	if (!(info->map = (char **)malloc(sizeof(char *) * (info->ymap + 1))))
-		return (0);
-	info->map[info->ymap] = NULL;
-	while (info->map[i])
-	{
-		info->map[i] = ft_memallocset((info->xmap + 1), '.');
-		info->map[i++][info->xmap] = '\0';
+		if (!(info->map = (char **)malloc(sizeof(char *) * (info->ymap + 1))))
+			return (0);
+		info->map[info->ymap] = NULL;
+		while (info->map[i])
+		{
+			info->map[i] = ft_memallocset((info->xmap + 1), '.');
+			info->map[i++][info->xmap] = '\0';
+		}
+		return (1);
 	}
 	return (1);
 }

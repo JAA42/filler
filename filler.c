@@ -17,10 +17,8 @@ void		ft_play(t_info *info)
 				state = ft_update_map(line, info, fd);
 				ft_get_new_piece(line, info, fd);
 				ft_puttab_fd(info->map, fd);
-				ft_putstr_fd("Piece :\n", fd);
 				ft_puttab_fd(info->piece, fd);
-				ft_putstr("<got (X): [12, 14]");
-				sleep(3);
+				//REMETTRE STATE A 0 apres
 			}
 			//ft_algorithm;
 			//ft_putstr;
