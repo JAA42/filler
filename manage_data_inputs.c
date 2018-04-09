@@ -5,36 +5,39 @@ void		ft_get_new_piece(char *line, t_info *info, int fd)
 	int		ypiece;
 	int		i;
 
-	get_next_line(0, &line); // Position GNL : on l'avance sur piece x y : //
 	ypiece = ft_atoi(line + 6);
-	i = -1;
+	free(line);
+	i = 0;
 	if (!(info->piece = (char **)malloc(sizeof(char *) * (ypiece + 1))))
 		return ;
 	info->piece[ypiece] = NULL;
-	while (++i != ypiece)
+	while (i != ypiece)
 	{
 		get_next_line(0, &line);
-		info->piece[i] = ft_strdup(line);
+		info->piece[i++] = ft_strdup(line);
+		free(line);
 	}
 }
 
-int			ft_update_map(char *line, t_info *info, int fd)
+char	*ft_update_map(char *line, t_info *info, int fd)
 {
 	int		x;
 	int		y;
 
 	x = -1;
 	y = -1;
+	free(line);
 	while (info->map[++y])
 	{
-	get_next_line(0, &line);
+		get_next_line(0, &line);
 		while (info->map[y][++x])
-			if (/*line[x + 4] != '.' &&*/ line[x + 4] != info->map[y][x])
+			if (line[x + 4] != info->map[y][x])
 				info->map[y][x] = line[x + 4];
 		x = -1;
+		free(line);
 	}
-	// POSITION GNL : Derniere ligne de map  (014)//
-	return (2);
+	get_next_line(0, &line);
+	return (line);
 }
 
 int			ft_init_players_map(char *line, t_info *info, int fd)
@@ -42,9 +45,10 @@ int			ft_init_players_map(char *line, t_info *info, int fd)
 	int		i;
 
 	i = 0;
-	if (!(info->player))
+	if (!info->player)
 	{
 		info->player = (line[10] == 1) ? 'O' : 'X';
+		free(line);
 		return (0);
 	}
 	if (!info->ymap)
@@ -56,11 +60,11 @@ int			ft_init_players_map(char *line, t_info *info, int fd)
 		info->map[info->ymap] = NULL;
 		while (info->map[i])
 		{
-			info->map[i] = ft_memallocset((info->xmap + 1), (i + 48));
+			info->map[i] = ft_memallocset((info->xmap + 1), '.');
 			info->map[i++][info->xmap] = '\0';
 		}
-		return (1);
 	}
+	free(line);
 	return (1);
 }
 

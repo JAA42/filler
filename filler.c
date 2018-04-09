@@ -14,10 +14,12 @@ void		ft_play(t_info *info)
 			state = ft_init_players_map(line, info, fd);
 		else if (state == 1)
 			{
-				state = ft_update_map(line, info, fd);
+				line = ft_update_map(line, info, fd);
 				ft_get_new_piece(line, info, fd);
 				ft_puttab_fd(info->map, fd);
 				ft_puttab_fd(info->piece, fd);
+				//FREE LA PIECE APRES CHAQUE UTILISATION
+				//n 
 				//REMETTRE STATE A 0 apres
 			}
 			//ft_algorithm;
@@ -25,6 +27,7 @@ void		ft_play(t_info *info)
 			//free;
 	}
 }
+
 int			main(void)
 {
 	t_info	*info;

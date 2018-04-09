@@ -13,7 +13,7 @@ typedef struct		s_info
 
 int		main(void);
 t_info	*ft_init_info(t_info *info);
-int		ft_update_map(char *line, t_info *info, int fd);
+char	*ft_update_map(char *line, t_info *info, int fd);
 void	ft_get_new_piece(char *line, t_info *info, int fd);
 int		ft_init_players_map(char *line, t_info *info ,int fd);
 #endif
