@@ -25,7 +25,6 @@ void		ft_play(t_info *info)
 			//free;
 	}
 }
-
 int			main(void)
 {
 	t_info	*info;

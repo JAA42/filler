@@ -24,15 +24,14 @@ int			ft_update_map(char *line, t_info *info, int fd)
 	int		y;
 
 	x = -1;
-	y = 0;
-	get_next_line(0, &line);
+	y = -1;
 	while (info->map[++y])
 	{
-		while (info->map[++x])
-			if (line[x + 4] != '.' && line[x + 4] != info->map[y][x])
+	get_next_line(0, &line);
+		while (info->map[y][++x])
+			if (/*line[x + 4] != '.' &&*/ line[x + 4] != info->map[y][x])
 				info->map[y][x] = line[x + 4];
 		x = -1;
-		get_next_line(0, &line);
 	}
 	// POSITION GNL : Derniere ligne de map  (014)//
 	return (2);
@@ -57,7 +56,7 @@ int			ft_init_players_map(char *line, t_info *info, int fd)
 		info->map[info->ymap] = NULL;
 		while (info->map[i])
 		{
-			info->map[i] = ft_memallocset((info->xmap + 1), '.');
+			info->map[i] = ft_memallocset((info->xmap + 1), (i + 48));
 			info->map[i++][info->xmap] = '\0';
 		}
 		return (1);
